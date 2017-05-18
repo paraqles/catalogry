@@ -1,0 +1,19 @@
+= if(assigns[:inventories]) do
+  %table
+    %thead
+      %th
+        ID
+      %th
+        Name
+      %th
+        Item Count
+
+    %tbody
+      = for inventory <- @inventories do
+        %tr
+          %td= inventory.id
+          %td= link inventory.name, to: inventory_path(@conn, :show, inventory)
+          %td= length(Map.keys(inventory.items)) - 4
+      - end
+- end
+= link "Create new inventory", to: inventory_path(@conn, :new), class: "btn btn-big"

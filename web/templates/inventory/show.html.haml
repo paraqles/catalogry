@@ -1,0 +1,20 @@
+<h2>Inventory <%= @inventory.name %></h2>
+<table>
+  <caption value="Items in the inventory" />
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= for item <- @inventory.items do %>
+  <tr>
+    <td><%= item.id %></td>
+    <td><%= link item.name, to: inventory_item_path(@conn, :show, item) %>
+    <td><%= item.state %></td>
+  </tr>
+  <% end %>
+</table>
+<%= link "Add new item", to: inventory_item_path(@conn, :new, @inventory), class: "btn btn-big" %>

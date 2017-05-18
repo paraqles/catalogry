@@ -1,0 +1,5 @@
+<%= form_for @inventory, inventory_path(@conn, :create), fn f -> %>
+  <%= label f, :name, "Name" %>
+  <%= text_input f, :name, autofocus: true %>
+  <button type="submit">Create inventory</button>
+<% end %>

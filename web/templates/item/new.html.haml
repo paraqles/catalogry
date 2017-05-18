@@ -1,0 +1,11 @@
+= form_for @item, inventory_item_path(@conn, :create, @inventory), fn f ->
+  %fieldset
+    = label f, :name, "Name"
+    = text_input f, :name, autofocus: true
+  %fieldset
+    = label f, :state
+    = text_input f, :state
+
+  %button(type="submit")
+    Create item
+- end
