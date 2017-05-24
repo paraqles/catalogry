@@ -57,7 +57,7 @@ exports.config = {
     },
     sass: {
       options: {
-        includePaths: ['node_modules']
+        includePaths: ['node_modules', 'node_modules/bourbon-neat/core']
       }
     }
   },

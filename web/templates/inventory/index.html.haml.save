@@ -1,4 +1,4 @@
-= if(assigns[:inventories]) do
+= if assigns[:inventories] do
   %table
     %thead
       %th

@@ -1,0 +1,41 @@
+<h2>
+  Inventory <%= @inventory.name %>
+  <%= link to: inventory_path(@conn, :edit, @inventory) do %>
+    <i class="fa fa-pencil-square" />
+  <% end %>
+</h2>
+<table>
+  <caption><%= gettext("Items in the inventory") %></caption>
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th><%= gettext("State") %></th>
+      <th><%= gettext("Possessor") %></th>
+      <th><%= gettext("Return In Date") %></th>
+      <th><%= gettext("Foreing Inv#") %></th>
+
+  </thead>
+  <tbody>
+    <%= for item <- @inventory.items do %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= link item.name, to: inventory_item_path(@conn, :show, @inventory, item) %></td>
+        <td><%= item.state %></td>
+        <td><%= ItemView.possessor(item) %></td>
+
+        <%= if nil == ItemView.return_date(item) do %>
+          <td><%= link gettext("Rent"), to: inventory_item_possessing_path(@conn, :new, @inventory, item) %></td>
+
+        <%= else %>
+          <td><%= ItemView.return_date(item) %></td>
+        <% end %>
+
+        <td><%= item.inventory_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link gettext("Add new item"), to: inventory_item_path(@conn, :new, @inventory), class: "btn btn-big" %>

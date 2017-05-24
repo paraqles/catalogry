@@ -1,0 +1,19 @@
+<%= if assigns[:inventories] do %>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Item Count</th>
+  </thead>
+  <tbody>
+    <%= for inventory <- @inventories do %>
+    <tr>
+      <td><%= inventory.id %></td>
+      <td><%= link inventory.name, to: inventory_path(@conn, :show, inventory) %></td>
+      <td><%= length(inventory.items) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<%= link "Create new inventory", to: inventory_path(@conn, :new), class: "btn btn-big" %>

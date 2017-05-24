@@ -1,0 +1,12 @@
+/* This file is for your main application css. */
+
+@import "neat";
+
+body {
+  font-family: "Courier New", sans-serif;
+
+  @include grid-container;
+}
+
+a {
+}

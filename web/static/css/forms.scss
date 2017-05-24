@@ -1,0 +1,44 @@
+@import "neat";
+
+form {
+
+  .required:after {
+    content: "*";
+    margin-right: -15px;
+    margin-left: 5px;
+  }
+
+  $form-grid: (
+    columns: 3,
+    gutter: 20px,
+  );
+
+  .form-group {
+    @include grid-container;
+
+    box-sizing: border-box;
+
+    margin: {
+      bottom: 10px
+    }
+
+    label {
+      @include grid-column(1, $form-grid);
+
+      text-align: right;
+    }
+
+    input {
+      @include grid-column(2, $form-grid);
+    }
+
+    select {
+      @include grid-column(2, $form-grid);
+    }
+  }
+
+  button {
+    @include grid-column(1, $form-grid);
+    @include grid-push(1, $form-grid);
+  }
+}

@@ -1,11 +1,16 @@
 = form_for @item, inventory_item_path(@conn, :create, @inventory), fn f ->
-  %fieldset
-    = label f, :name, "Name"
+  .form-group
+    = label f, :name, class: "required"
     = text_input f, :name, autofocus: true
-  %fieldset
-    = label f, :state
-    = text_input f, :state
 
-  %button(type="submit")
+  .form-group
+    = label f, :state, class: "required"
+    = select f, :state, states()
+
+  .form-group
+    = label f, :inventory_number, gettext("Foreign inventory nummber")
+    = text_input f, :inventory_number
+
+  %button.btn-big(type="submit")
     Create item
 - end

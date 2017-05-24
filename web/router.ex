@@ -13,22 +13,49 @@ defmodule Catalogry.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :authenticated do
+    plug :ensure_authenticated
+  end
+
   scope "/", Catalogry do
     pipe_through :browser # Use the default browser stack
 
     get "/", InventoryController, :index
 
+    get "/login", SessionController, :new
+    get "/logout", SessionController, :delete
+    get "/register", UserController, :new
+    post "/register", UserController, :create
+
+    get "/profile", UserController, :show
+
     resources "/inventories", InventoryController do
+      pipe_through :authenticated
+
       resources "/items", ItemController do
+        resources "/possessings", PossessingController do
+          resources "/comments", PossessingCommentController
+        end
         resources "/attributes", AttributeController
       end
     end
 
-    resources "/users", UserController
-
     scope "/admin", Catalogry.Admin, as: :admin do
+      pipe_through :authenticated
+
+      resources "/users", UsersController do
+        resources "/authenticators", AuthenticatorController
+        resources "/roles", RoleController
+      end
+
+      resources "/sessions", SessionsController
+
       resources "/inventories", InventoryController do
         resources "/items", ItemController do
+          resources "/possessings", PossessingController do
+            resources "/comments", PossessingCommentController
+          end
+
           resources "/attributes", AttributeController
         end
       end

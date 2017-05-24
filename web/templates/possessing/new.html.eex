@@ -1,0 +1,24 @@
+<%= form_for @possessing, inventory_item_possessing_path(@conn, :create, @inventory, @item), fn f -> %>
+  <div class="form-group">
+    <%= label f, :possessor_id, class: "required" %>
+    <%= text_input f, :possessor_id, autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :return_date, class: "required" %>
+    <%= text_input f, :return_date %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :renter_id, class: "required" %>
+    <%= if assigns[:current_user] do %>
+      <%= text_input f, :renter_id, class: "required", value: @current_user.name %>
+    <%= else %>
+      <%= text_input f, :renter_id, class: "required" %>
+    <% end %>
+  </div>
+
+  <button class="btn-big" type="submit">
+    <%= gettext("Rent") %>
+  </button>
+<% end %>

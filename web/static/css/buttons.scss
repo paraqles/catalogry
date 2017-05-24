@@ -1,27 +1,29 @@
 @import "bourbon/app/assets/stylesheets/bourbon";
 
-@mixin btn($color) {
-  background-color: tint(gray, 30%);
-  color: white;
+@mixin btn($color, $text-color: black) {
+  background-color: tint($color, 80%);
+  color: $text-color;
   text-decoration: none;
 
   &:hover {
-    background-color: lighten(gray, 0.6);
+    background-color: lighten($color, 0.6);
   }
 
   border: {
+    radius: 3px;
+
     bottom: {
-      style: solid;
+      style: none;
       color: $color;
       width: 1px;
     }
     left: {
-      style: solid;
+      style: none;
       color: $color;
       width: 1px;
     }
     right: {
-      style: solid;
+      style: none;
       color: $color;
       width: 1px;
     }

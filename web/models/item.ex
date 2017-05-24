@@ -5,10 +5,9 @@ defmodule Catalogry.Item do
     field :name, :string
     field :inventory_number, :integer
     field :state, :string
-    field :possessor, :string
-    field :return_date, Ecto.DateTime
 
     belongs_to :inventory, Catalogry.Inventory
+    has_many :possessings, Catalogry.Possessing
 
     timestamps()
   end
@@ -18,7 +17,7 @@ defmodule Catalogry.Item do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :inventory_number, :state, :possessor, :return_date])
-    |> validate_required([:name, :inventory_number, :state, :possessor, :return_date])
+    |> cast(params, [:name, :inventory_number, :state])
+    |> validate_required([:name, :state])
   end
 end

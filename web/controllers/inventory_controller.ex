@@ -1,10 +1,13 @@
 defmodule Catalogry.InventoryController do
   use Catalogry.Web, :controller
 
+  require Logger
+
   alias Catalogry.Inventory
 
   def index(conn, _params) do
     inventories = Repo.all(Inventory)
+                  |> Repo.preload(:items)
     render conn, "index.html", inventories: inventories
   end
 

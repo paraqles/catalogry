@@ -36,6 +36,7 @@ defmodule Catalogry.Web do
 
       import Catalogry.Router.Helpers
       import Catalogry.Gettext
+      import Catalogry.Helper
     end
   end
 
@@ -52,6 +53,7 @@ defmodule Catalogry.Web do
       import Catalogry.Router.Helpers
       import Catalogry.ErrorHelpers
       import Catalogry.Gettext
+      import Catalogry.Helper
     end
   end
 
