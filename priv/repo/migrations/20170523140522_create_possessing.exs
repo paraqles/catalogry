@@ -6,7 +6,7 @@ defmodule Catalogry.Repo.Migrations.CreatePossessing do
       add :return_date, :utc_datetime
       add :returned, :boolean, default: false, null: false
 
-      add :item_id, references(:items, on_delete: :nothing)
+      add :item_id, references(:items, on_delete: :delete_all)
       add :possessor_id, references(:users, on_delete: :nothing)
       add :renter_id, references(:users, on_delete: :nothing)
 

@@ -1,3 +1,3 @@
-defmodule Catalogry.PageViewTest do
-  use Catalogry.ConnCase, async: true
+defmodule CatalogryWeb.PageViewTest do
+  use CatalogryWeb.ConnCase, async: true
 end

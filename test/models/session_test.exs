@@ -1,7 +1,7 @@
-defmodule Catalogry.SessionTest do
+defmodule CatalogryWeb.SessionTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.Session
+  alias CatalogryWeb.Session
 
   @valid_attrs %{timeout: 42}
   @invalid_attrs %{}

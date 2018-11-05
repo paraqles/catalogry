@@ -1,7 +1,7 @@
-defmodule Catalogry.AddressTest do
+defmodule CatalogryWeb.AddressTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.Address
+  alias CatalogryWeb.Address
 
   @valid_attrs %{main: true, number: "some content", state: "some content", state_number: "some content", street: "some content", town: "some content"}
   @invalid_attrs %{}

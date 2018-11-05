@@ -1,7 +1,7 @@
-defmodule Catalogry.UserTest do
+defmodule CatalogryWeb.UserTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.User
+  alias CatalogryWeb.User
 
   @valid_attrs %{login_name: "some content", name: "some content"}
   @invalid_attrs %{}

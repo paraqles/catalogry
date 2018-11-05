@@ -1,7 +1,7 @@
-defmodule Catalogry.EmailTest do
+defmodule CatalogryWeb.EmailTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.Email
+  alias CatalogryWeb.Email
 
   @valid_attrs %{active: true, email_address: "some content"}
   @invalid_attrs %{}

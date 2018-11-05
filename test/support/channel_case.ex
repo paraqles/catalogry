@@ -1,4 +1,4 @@
-defmodule Catalogry.ChannelCase do
+defmodule CatalogryWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -27,7 +27,7 @@ defmodule Catalogry.ChannelCase do
 
 
       # The default endpoint for testing
-      @endpoint Catalogry.Endpoint
+      @endpoint CatalogryWeb.Endpoint
     end
   end
 

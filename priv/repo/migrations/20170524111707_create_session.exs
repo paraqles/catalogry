@@ -4,7 +4,10 @@ defmodule Catalogry.Repo.Migrations.CreateSession do
   def change do
     create table(:sessions) do
       add :timeout, :integer
-      add :user_id, references(:users, on_delete: :nothing)
+      add :location, :string
+
+      add :user_id, references(:users, on_delete: :delete_all)
+      add :authenticator_id, references(:users, on_delete: :nothing)
 
       timestamps()
     end
@@ -12,3 +15,4 @@ defmodule Catalogry.Repo.Migrations.CreateSession do
 
   end
 end
+

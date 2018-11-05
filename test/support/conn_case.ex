@@ -1,4 +1,4 @@
-defmodule Catalogry.ConnCase do
+defmodule CatalogryWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -25,10 +25,10 @@ defmodule Catalogry.ConnCase do
       import Ecto.Changeset
       import Ecto.Query
 
-      import Catalogry.Router.Helpers
+      import CatalogryWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Catalogry.Endpoint
+      @endpoint CatalogryWeb.Endpoint
     end
   end
 

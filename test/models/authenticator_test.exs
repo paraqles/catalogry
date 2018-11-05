@@ -1,7 +1,7 @@
-defmodule Catalogry.AuthenticatorTest do
+defmodule CatalogryWeb.AuthenticatorTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.Authenticator
+  alias CatalogryWeb.Authenticator
 
   @valid_attrs %{invalid: true, secret: "some content"}
   @invalid_attrs %{}

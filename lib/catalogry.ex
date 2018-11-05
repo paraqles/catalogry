@@ -11,7 +11,7 @@ defmodule Catalogry do
       # Start the Ecto repository
       supervisor(Catalogry.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Catalogry.Endpoint, []),
+      supervisor(CatalogryWeb.Endpoint, []),
       # Start your own worker by calling: Catalogry.Worker.start_link(arg1, arg2, arg3)
       # worker(Catalogry.Worker, [arg1, arg2, arg3]),
     ]
@@ -25,7 +25,7 @@ defmodule Catalogry do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    Catalogry.Endpoint.config_change(changed, removed)
+    CatalogryWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

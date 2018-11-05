@@ -1,7 +1,7 @@
-defmodule Catalogry.ItemTest do
+defmodule CatalogryWeb.ItemTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.Item
+  alias CatalogryWeb.Item
 
   @valid_attrs %{inventory_number: 42, name: "some content", possessor: "some content", return_date: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, state: "some content"}
   @invalid_attrs %{}

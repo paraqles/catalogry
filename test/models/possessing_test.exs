@@ -1,7 +1,7 @@
-defmodule Catalogry.PossessingTest do
+defmodule CatalogryWeb.PossessingTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.Possessing
+  alias CatalogryWeb.Possessing
 
   @valid_attrs %{return_date: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, returned: true}
   @invalid_attrs %{}

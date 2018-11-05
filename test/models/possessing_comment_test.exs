@@ -1,7 +1,7 @@
-defmodule Catalogry.PossessingCommentTest do
+defmodule CatalogryWeb.PossessingCommentTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.PossessingComment
+  alias CatalogryWeb.PossessingComment
 
   @valid_attrs %{comment: "some content"}
   @invalid_attrs %{}

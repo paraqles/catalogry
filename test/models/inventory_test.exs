@@ -1,7 +1,7 @@
-defmodule Catalogry.InventoryTest do
+defmodule CatalogryWeb.InventoryTest do
   use Catalogry.ModelCase
 
-  alias Catalogry.Inventory
+  alias CatalogryWeb.Inventory
 
   @valid_attrs %{name: "some content"}
   @invalid_attrs %{}

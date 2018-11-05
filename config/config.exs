@@ -10,10 +10,10 @@ config :catalogry,
   ecto_repos: [Catalogry.Repo]
 
 # Configures the endpoint
-config :catalogry, Catalogry.Endpoint,
+config :catalogry, CatalogryWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "/iPqHbHtkwEGZGZ2u7pmEjInC55fphiobotibhycc1fgs/mLoLmtSsyUgYCPOtJ+",
-  render_errors: [view: Catalogry.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: CatalogryWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Catalogry.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

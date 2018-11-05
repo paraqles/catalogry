@@ -1,5 +1,5 @@
-defmodule Catalogry.PageControllerTest do
-  use Catalogry.ConnCase
+defmodule CatalogryWeb.PageControllerTest do
+  use CatalogryWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
